@@ -27,7 +27,9 @@ humans = [
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with 'D':
 print("Starts with D:")
-a = [n.name for n in humans if n.name[0] == 'D']
+a = [h.name for h in humans if h.name[0] == 'D']
+
+#a = [n.name for n in humans if n.name[0] == 'D']
 print(a)
 
 # Write a list comprehension that creates a list of names of everyone
@@ -51,6 +53,7 @@ print(d)
 # joined to the age with a hyphen, for example "David-31", for all humans.
 print("Name hyphen age:")
 e = [f'{n.name}-{n.age}' for n in humans]
+
 print(e)
 
 # Write a list comprehension that creates a list of tuples containing name and
