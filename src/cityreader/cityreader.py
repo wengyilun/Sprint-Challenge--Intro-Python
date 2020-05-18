@@ -30,6 +30,7 @@ def cityreader(cities=[]):
   # TODO Implement the functionality to read from the 'cities.csv' file
   # For each city record, create a new City instance and add it to the 
   # `cities` list
+
       with open('cities.csv', newline='') as csvfile:
         data = csv.reader(csvfile, delimiter=',')
         cityData = list(data)
@@ -41,8 +42,8 @@ def cityreader(cities=[]):
 cityreader(cities)
 
 # Print the list of cities (name, lat, lon), 1 record per line.
-for c in cities:
-    print(c)
+# for c in cities:
+#     print(c)
 
  #City("Seattle", 47.6217,-122.3238),
 # STRETCH GOAL!
@@ -66,6 +67,7 @@ for c in cities:
 # Enter lat2,lon2: 32,-120
 # Albuquerque: (35.1055,-106.6476)
 # Riverside: (33.9382,-117.3949)
+
 # San Diego: (32.8312,-117.1225)
 # Los Angeles: (34.114,-118.4068)
 # Las Vegas: (36.2288,-115.2603)
@@ -83,5 +85,8 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
   # TODO Ensure that the lat and lon valuse are all floats
   # Go through each city and check to see if it falls within 
   # the specified coordinates.
+  for c in cities:
+      if (c.lat < lat1 and c.lat > lat2) and (c.lon < lon1 and c.lon > lon2):
+          within.append(c)
 
   return within
